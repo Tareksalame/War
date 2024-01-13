@@ -45,7 +45,7 @@ function App() {
           computerCards.push(newCardsGame.dealer())
         }
         player = new Player(name,playerCards);
-        computer = new Player('Computer', computerCards);
+        computer = new Player('♠️♦️♣️❤️', computerCards);
         playersArr.push(player)
         
         setPage(1) 
@@ -60,7 +60,7 @@ function App() {
           playerCards.push(newCardsGame.dealer())
           computerCards.push(newCardsGame.dealer())
         }
-        computer = new Player('Computer', computerCards);
+        computer = new Player('♠️♦️♣️❤️', computerCards);
         playerCheck.cards = playerCards
         setPage(1) 
       }

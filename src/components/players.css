@@ -3,4 +3,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    color:rgb(0, 13, 73) ;
+}
+.players span
+{
+    color: brown;
 }

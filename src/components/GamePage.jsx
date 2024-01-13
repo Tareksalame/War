@@ -62,7 +62,10 @@ export default function GamePage(props) {
 
   return (
     <div>
-        <h1 className='computerPlayer'>{props.computer.name}</h1>
+        <div>
+        <h1 style={{marginBottom:'0px'}} className='computerPlayer'>{props.computer.name}</h1>
+        <Score points = {computerPoints}/>
+        </div>
         <div className='cardsScore'>
         <Round index ={index}/>
         <div className='cardsDiv'>
@@ -70,12 +73,11 @@ export default function GamePage(props) {
         <Cards cardNum = {props.player.cards[index]}/>
         </div>
         <div className='scoreDiv'>
-        <h1 className='scoringName'>Computer</h1><Score points = {computerPoints}/>
-        <h1 className='scoringName'>{props.player.name}</h1><Score points = {playerPoints}/>
         </div>
+        <button className='NextCardButton' onClick={nextCard}>الكرت الّي بعده</button>
         </div>
-        <h1 className='computerPlayer'>{props.player.name}</h1>
-        <button className='buttons' onClick={nextCard}>Next Card</button>
+        <Score points = {playerPoints}/>
+        <h1 style={{marginTop:'0px'}} className='computerPlayer'>{props.player.name}</h1>
     </div>
   )
 }

@@ -13,20 +13,18 @@ export default function HomePage(props) {
         if(flag === false)
         {
             setFlag(true)
-            setArr(props.playersArr.map((val)=>
+            setArr(props.playersArr.map((val,idx)=>
             {
-                return <Players name={val.name}  win={val.win} lose={val.lose} />
+                return <Players key={idx+1} name={val.name}  win={val.win} lose={val.lose} />
             }))
-            console.log(flag)
         }
         else
         {
             setFlag(false)
-            setArr(props.playersArr.map((val)=>
+            setArr(props.playersArr.map((val,idx)=>
             {
-                return <div></div>
+                return <div key={idx+1}></div>
             }))
-            console.log(flag)
         }
     }
 
@@ -37,11 +35,11 @@ export default function HomePage(props) {
     }
   return (
     <div className='mainDiv'>
-        <h1 className='war'>War</h1>
-        <input className='nameInput' onChange={(e)=>{setName(e.target.value)}} type="text" placeholder='Enter Your Name' />
+        <h1 className='war'>♠️♦️♣️❤️<br /> حرب ضرب</h1>
+        <input className='nameInput' onChange={(e)=>{setName(e.target.value)}} type="text" placeholder='اكتب اسمك' />
 
-        <button className='buttons' onClick={check}>Play Now</button>
-        <button className='buttons' onClick={clickPlayers}>Click To See Players</button>
+        <button className='buttons' onClick={check}>يلّا نلعب</button>
+        <button className='buttons' onClick={clickPlayers}>اعرض قائمة اللاعبين</button>
         <div>{arr}</div>
     </div>
   )
